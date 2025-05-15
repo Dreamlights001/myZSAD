@@ -162,6 +162,11 @@ CLIP（Contrastive Language-Image Pretraining）是一种强大的视觉-语言�
 ## 结论
 零样本工业瑕疵检测方法为工业场景提供了高效的异常检测解决方案，特别适合数据稀缺的情况。2023年至2025年间，基于CLIP、SAM和MLLMs的方法显著推动了该领域发展，2025年新方法如FiLo++和AA-CLIP进一步提升了细粒度检测和多样化异常处理能力。建议根据具体应用场景（如2D图像、3D点云或逻辑瑕疵）选择合适方法，并参考相关论文和代码仓库进行深入研究。
 
+## 注意事项
+AA-CLIP在2/4/8/64/full等不同数据量级下进行了训练和评测，并且强调了在极少样本（如2-shot、16-shot、64-shot）和全量（full-shot）场景下的泛化与高效适应能力，并不是严格意义上的Zero-shot，而是属于“泛零样本（generalized zero-shot）”或“跨类零样本（cross-category zero-shot）”异常检测方法。。
+- **论文原文明确说明**：“By training with a minimal sample... such as one normal sample and one anomaly sample (2-shot per class) and testing across unseen datasets, our method achieves zero-shot performance comparable to other CLIP-based AD techniques. With only 64-shot of each class seen in the training set, our method reaches state-of-the-art (SOTA) results in cross-dataset zero-shot testing, validating our method’s ability to maximize the CLIP’s potential for AD with a minimal data requirement.”
+- **实验设置部分**：“To demonstrate adaptation efficiency, we conduct training under various data levels: 2-shot per class, 16-shot per class, 64-shot per class, and full-shot. The corresponding number of samples are randomly selected from each class, while maintaining a consistent ratio between normal and anomaly samples.”
+
 ## 关键引文
 - [Awesome Industrial Anomaly Detection GitHub Repository](https://github.com/M-3LAB/awesome-industrial-anomaly-detection)
 - [AnoVL: Adapting Vision-Language Models for Unified Zero-shot Anomaly Localization](https://github.com/hq-deng/AnoVL)
